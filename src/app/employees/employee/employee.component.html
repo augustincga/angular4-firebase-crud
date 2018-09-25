@@ -1,0 +1,24 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="employeeService.selectedEmployee.$key" />
+  <div class="form-group">
+    <label>Name</label>
+    <input class="form-control" name="name" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" placeholder="Full Name">
+  </div>
+  <div class="form-group">
+    <label>Position</label>
+    <input class="form-control" name="position" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position">
+  </div>
+  <div class="form-group">
+    <label>Office</label>
+    <input class="form-control" name="office" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.office" placeholder="Office">
+  </div>
+  <div class="form-group">
+    <label>Salary</label>
+    <input class="form-control" name="salary" #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="button" class="btn btn-default" (click)="onDeleteEmployee($key)">Delete</button>
+    <button type="button" class="btn btn-default" (click)="resetForm(employeeForm)">Reset</button>
+  </div>
+</form>

@@ -1,0 +1,5 @@
+<div class="card" *ngFor="let employee of employeeList" (click)="onItemClick(employee)">
+  <div class="card-body">
+    {{employee.name}} - {{employee.position}}
+  </div>
+</div>
